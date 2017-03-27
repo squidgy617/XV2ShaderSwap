@@ -1,2 +1,8 @@
 c:\users\dsu\documents\visual studio 2015\Projects\ShaderSwap\ShaderSwap\bin\Debug\ShaderSwap.exe.config
 D:\RyanThing\ShaderSwap\ShaderSwap\bin\Debug\ShaderSwap.exe.config
+C:\Users\DSU\Documents\XV2ShaderSwap\ShaderSwap\ShaderSwap\bin\Debug\ShaderSwap.exe.config
+C:\Users\DSU\Documents\XV2ShaderSwap\ShaderSwap\ShaderSwap\bin\Debug\ShaderSwap.exe
+C:\Users\DSU\Documents\XV2ShaderSwap\ShaderSwap\ShaderSwap\bin\Debug\ShaderSwap.pdb
+C:\Users\DSU\Documents\XV2ShaderSwap\ShaderSwap\ShaderSwap\obj\Debug\ShaderSwap.csprojResolveAssemblyReference.cache
+C:\Users\DSU\Documents\XV2ShaderSwap\ShaderSwap\ShaderSwap\obj\Debug\ShaderSwap.exe
+C:\Users\DSU\Documents\XV2ShaderSwap\ShaderSwap\ShaderSwap\obj\Debug\ShaderSwap.pdb
