@@ -16,7 +16,30 @@ namespace ShaderSwap
             XmlDocument shaderFile = new XmlDocument();
             XmlNode child;
             XmlNodeList matScales;
-            int count = 0;
+            XmlDocument replacerFile = new XmlDocument();
+            XmlNode replacer;
+            int replaceIndex = 0;
+            int matIndex = 0;
+
+            // Open file that contains xml for replacement
+            try {
+                replacerFile.Load("Replacer.xml");
+            }
+            catch (XmlException exception) {
+                Console.WriteLine("Not a valid xml file. ", exception);
+                var trash = Console.ReadLine();
+            }
+
+            // Holding root node for xml file caontaining replacement
+            replacer = replacerFile.FirstChild;
+
+            // Finding childnode index for matscale1x
+            foreach (XmlNode n in replacer.ChildNodes) {
+                if (n.Attributes["name"].Value == "MatScale1X") {
+                    break;
+                }
+                replaceIndex++;
+            }
 
             // Loop through all input xml files
             foreach (string file in args) {
@@ -27,10 +50,11 @@ namespace ShaderSwap
                 catch (XmlException exception) {
                     Console.WriteLine("Not a valid xml file. ", exception);
                     var trash = Console.ReadLine();
+                    continue;
                 }
 
                 // Reset index count for matScales when opening new file
-                count = 0;
+                matIndex = 0;
 
                 // Find the first child node of file
                 child = shaderFile.FirstChild.FirstChild;
@@ -41,14 +65,23 @@ namespace ShaderSwap
                 // Go through each child node
                 while (child != null) {
                     // Delete all children of current node
-
-                    // Copy all values from replacement file
+                    while (child.HasChildNodes) {
+                        child.RemoveChild(child.FirstChild);
+                    }
 
                     // Replace new matscale1x with original
+                    replacer.ReplaceChild(matScales[matIndex], replacer.ChildNodes[replaceIndex]);
+
+                    // Copy all values from replacement file
+                    foreach (XmlNode n in replacer.ChildNodes) {
+                        child.AppendChild(n);
+                    }
 
                     // Proceeding to next node
                     child = child.NextSibling;
+                    matIndex++;
                 }
+                shaderFile.Save(file);
             }
         }
     }
