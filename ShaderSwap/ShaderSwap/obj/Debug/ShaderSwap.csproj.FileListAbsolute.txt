@@ -8,3 +8,6 @@ C:\Users\DSU\Documents\XV2ShaderSwap\ShaderSwap\ShaderSwap\obj\Debug\ShaderSwap.
 C:\Users\DSU\Documents\XV2ShaderSwap\ShaderSwap\ShaderSwap\obj\Debug\ShaderSwap.pdb
 D:\RyanThing\ShaderSwap\ShaderSwap\obj\Debug\ShaderSwap.exe
 D:\RyanThing\ShaderSwap\ShaderSwap\obj\Debug\ShaderSwap.pdb
+D:\RyanThing\ShaderSwap\ShaderSwap\bin\Debug\ShaderSwap.exe
+D:\RyanThing\ShaderSwap\ShaderSwap\bin\Debug\ShaderSwap.pdb
+D:\RyanThing\ShaderSwap\ShaderSwap\obj\Debug\ShaderSwap.csprojResolveAssemblyReference.cache

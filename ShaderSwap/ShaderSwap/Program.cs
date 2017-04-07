@@ -16,6 +16,7 @@ namespace ShaderSwap
             XmlDocument shaderFile = new XmlDocument();
             XmlNode child;
             XmlNodeList matScales;
+            XmlNodeList importedNodes;
             XmlDocument replacerFile = new XmlDocument();
             XmlNode replacer;
             int replaceIndex = 0;
@@ -76,13 +77,19 @@ namespace ShaderSwap
                     }
 
                     // Replace new matscale1x with original
-                    replacer.ReplaceChild(matScales[matIndex], replacer.ChildNodes[replaceIndex]);
+                    // "Kill me" - this line probably
+                    Console.WriteLine("\n" + matScales[matIndex].Attributes["value"].Value);
+                    Console.ReadLine();
+                    replacer.ReplaceChild(replacer.OwnerDocument.ImportNode(matScales[matIndex], true),
+                        replacer.ChildNodes[replaceIndex]);
 
                     // Copy all values from replacement file
-                    foreach (XmlNode n in replacer.ChildNodes)
-                    {
-                        child.AppendChild(n);
+                    foreach (XmlNode n in replacer.ChildNodes) {
+                        // "Kill me 2: Electric Boogaloo" - also this line probably
+                        child.AppendChild(child.OwnerDocument.ImportNode(n, false));
                     }
+
+                    //shaderFile.Save(file);
 
                     // Proceeding to next node
                     child = child.NextSibling;
