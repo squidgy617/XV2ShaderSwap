@@ -1,0 +1,23 @@
+<root>
+  <EMMParameter name="MatCol0R" type="0" value="0.0" />
+  <EMMParameter name="MatCol0G" type="0" value="0.0" />
+  <EMMParameter name="MatCol0B" type="0" value="0.0" />
+  <EMMParameter name="MatCol0A" type="0" value="1.0" />
+  <EMMParameter name="MatCol1R" type="0" value="0.178159997" />
+  <EMMParameter name="MatCol1G" type="0" value="0.10345" />
+  <EMMParameter name="MatCol1B" type="0" value="0.0" />
+  <EMMParameter name="MatCol1A" type="0" value="1.0" />
+  <EMMParameter name="MatCol3R" type="0" value="0.0" />
+  <EMMParameter name="MatCol3G" type="0" value="0.0" />
+  <EMMParameter name="MatCol3B" type="0" value="0.0" />
+  <EMMParameter name="MatCol3A" type="0" value="1.0" />
+  <EMMParameter name="MatScale0X" type="0" value="1.0" />
+  <EMMParameter name="MatScale0Y" type="0" value="1.0" />
+  <EMMParameter name="MatScale0Z" type="0" value="1.0" />
+  <EMMParameter name="MatScale0W" type="0" value="0.0280000009" />
+  <EMMParameter name="MatScale1X" type="0" value="0.0" />
+  <EMMParameter name="MatScale1Y" type="0" value="1.0" />
+  <EMMParameter name="MatScale1Z" type="0" value="1.0" />
+  <EMMParameter name="MatScale1W" type="0" value="1.0" />
+  <EMMParameter name="Glare" type="65537" value="1" />
+</root>
