@@ -16,11 +16,12 @@ namespace ShaderSwap
             XmlDocument shaderFile = new XmlDocument();
             XmlNode child;
             XmlNodeList matScales;
-            XmlNodeList importedNodes;
             XmlDocument replacerFile = new XmlDocument();
             XmlNode replacer;
             int replaceIndex = 0;
             int matIndex = 0;
+
+            int garbage;
 
             // Open file that contains xml for replacement
             try {
@@ -67,29 +68,27 @@ namespace ShaderSwap
                 // Hold values of all instance of matscale1x in all child nodes
                 matScales = shaderFile.SelectNodes("//EMMParameter[@name='MatScale1X']");
 
+                // DO NOT DELETE!!! FOR SOME REASON WILL BREAK PROGRAM!!!
+                garbage = matScales.Count;
+
                 // Go through each child node
                 while (child != null)
                 {
+                    // Replace new matscale1x with original
+                    replacer.ReplaceChild(replacer.OwnerDocument.ImportNode(matScales[matIndex], true),
+                        replacer.ChildNodes[replaceIndex]);
+
                     // Delete all children of current node
                     while (child.HasChildNodes)
                     {
                         child.RemoveChild(child.FirstChild);
                     }
 
-                    // Replace new matscale1x with original
-                    // "Kill me" - this line probably
-                    Console.WriteLine("\n" + matScales[matIndex].Attributes["value"].Value);
-                    Console.ReadLine();
-                    replacer.ReplaceChild(replacer.OwnerDocument.ImportNode(matScales[matIndex], true),
-                        replacer.ChildNodes[replaceIndex]);
-
                     // Copy all values from replacement file
                     foreach (XmlNode n in replacer.ChildNodes) {
                         // "Kill me 2: Electric Boogaloo" - also this line probably
                         child.AppendChild(child.OwnerDocument.ImportNode(n, false));
                     }
-
-                    //shaderFile.Save(file);
 
                     // Proceeding to next node
                     child = child.NextSibling;
